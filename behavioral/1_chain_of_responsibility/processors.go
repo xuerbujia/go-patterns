@@ -20,7 +20,7 @@ func (h *baseHandler) Handle(article *Article) error {
 	// ...
 
 	// call next handler
-	if h.next == nil {
+	if h.next != nil {
 		if err := h.next.Handle(article); err != nil {
 			return err
 		}
